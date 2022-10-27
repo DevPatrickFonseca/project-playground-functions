@@ -21,8 +21,9 @@ function splitSentence(phrase) {
 }
 
 // Desafio 4
-function concatName() {
+function concatName(stringsDaArray) {
   // seu código aqui
+  return `${stringsDaArray[stringsDaArray.length - 1]}, ${stringsDaArray[0]}`;
 }
 
 // Desafio 5
