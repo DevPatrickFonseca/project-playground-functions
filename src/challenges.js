@@ -62,8 +62,25 @@ function bighestNumber(numbers) {
 }
 
 // Desafio 7
-function catAndMouse() {
+function catAndMouse(mouse, cat1, cat2) {
   // seu código aqui
+  let position1 = cat1 - mouse;
+  let position2 = cat2 - mouse;
+
+  if (position1 < 0) {
+    position1 *= -1;
+  }
+  if (position2 < 0) {
+    position2 *= -1;
+  }
+
+  if (position1 < position2) {
+    return `cat1`;
+  } else if (position2 < position1) {
+    return `cat2`;
+  } else if (position1 === position2) {
+    return 'os gatos trombam e o rato foge';
+  }
 }
 
 // Desafio 8
