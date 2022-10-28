@@ -2,9 +2,9 @@
 function compareTrue(objeto1, objeto2) {
   // seu código aqui
   if (objeto1 === true && objeto2 === true) {
-  return true;
+    return true;
   } else {
-  return false;
+    return false;
   }
 }
 
@@ -17,7 +17,7 @@ function calcArea(base, height) {
 // Desafio 3
 function splitSentence(phrase) {
   // seu código aqui
-  return phrase.split(" ");
+  return phrase.split(' ');
 }
 
 // Desafio 4
@@ -53,9 +53,9 @@ function bighestNumber(numbers) {
   for (let index = 0; index < numbers.length; index += 1) {
     (numbers[index]);
     if (index === 0) {
-    maior = numbers[index];
+      maior = numbers[index];
     } else if (numbers[index] > maior) {
-    maior = numbers[index]
+      maior = numbers[index]
     }
   }
   return maior;
@@ -75,17 +75,31 @@ function catAndMouse(mouse, cat1, cat2) {
   }
 
   if (position1 < position2) {
-    return `cat1`;
+    return 'cat1';
   } else if (position2 < position1) {
-    return `cat2`;
+    return 'cat2';
   } else if (position1 === position2) {
     return 'os gatos trombam e o rato foge';
   }
 }
 
 // Desafio 8
-function fizzBuzz() {
+function fizzBuzz(array) {
   // seu código aqui
+  let arrayNumbers = [];
+
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] % 3 === 0 && array[index] % 5 === 0) {
+      arrayNumbers.push("fizzBuzz");
+    } else if (array[index] % 3 === 0) {
+      arrayNumbers.push("fizz");
+    } else if (array[index] % 5 === 0) {
+      arrayNumbers.push("buzz");
+    } else {
+      arrayNumbers.push("bug!");
+    }
+  } 
+  return arrayNumbers;
 }
 
 // Desafio 9
