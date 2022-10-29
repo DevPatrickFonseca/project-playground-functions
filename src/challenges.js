@@ -105,15 +105,14 @@ function fizzBuzz(array) {
 // Desafio 9
 function encode(phraseEncode) {
   // seu código aqui
-const characters = {
-  'a': '1',
-  'e': '2',
-  'i': '3',
-  'o': '4',
-  'u': '5',
-};
-
-let newPhrase = '';
+  const characters = {
+    'a': '1',
+    'e': '2',
+    'i': '3',
+    'o': '4',
+    'u': '5',
+  };
+  let newPhrase = '';
 
   for (let index = 0; index < phraseEncode.length; index += 1) {
     let letter = phraseEncode[index];
@@ -129,15 +128,14 @@ let newPhrase = '';
 
 function decode(phraseEncode) {
   // seu código aqui
-const characters = {
-  '1': 'a',
-  '2': 'e',
-  '3': 'i',
-  '4': 'o',
-  '5': 'u',
-};
-
-let newPhrase = '';
+  const characters = {
+    '1': 'a',
+    '2': 'e',
+    '3': 'i',
+    '4': 'o',
+    '5': 'u',
+  };
+  let newPhrase = '';
 
   for (let index = 0; index < phraseEncode.length; index += 1) {
     let letter = phraseEncode[index];
@@ -152,8 +150,20 @@ let newPhrase = '';
 }
 
 // Desafio 10
-function techList() {
+function techList(tech,name) {
   // seu código aqui
+  let technologiesNames = [];
+
+  if (tech.length === 0) {
+    return "Vazio!";
+  }
+  tech = tech.sort()
+
+  for (let i = 0; i < tech.length; i += 1) {
+    let techName = {tech: tech[i], name: name};
+    technologiesNames.push(techName);
+  }
+  return technologiesNames;
 }
 
 module.exports = {
