@@ -59,8 +59,41 @@ function sideCondition(sideA, sideB, sideC) {
 };
 
 // Desafio 13
-function hydrate() {
+function hydrate(drinks) {
   // seu código aqui
+  const foundDrinks = stringDrinks(drinks);
+  const glassOfWater = sumDrinks(foundDrinks);
+
+  if (glassOfWater === 1) {
+    return `${glassOfWater} copo de água`;
+  }
+  
+  if (glassOfWater > 1) {
+    return `${glassOfWater} copos de água`;
+  }
+
+  return sumDrinks(foundDrinks)
+
+// 01 - Encontra quantidade de bebidas na STRING
+  function stringDrinks(drinks) {
+    let checkDrinks = drinks;
+
+    let reg = /\d+/g;
+
+    return resultDrinks = checkDrinks.match(reg);
+  }
+
+// 02 - Somar a quantidade de drinks encontrados na string
+
+  function sumDrinks(foundDrinks) {
+    let sum = 0;
+
+    for(let i = 0; i < foundDrinks.length; i += 1){
+        const found = Number(foundDrinks[i]);
+        sum += found;
+    };
+    return sum;
+  };
 }
 
 module.exports = {
