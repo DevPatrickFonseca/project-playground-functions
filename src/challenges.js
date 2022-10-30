@@ -29,7 +29,7 @@ function concatName(stringsDaArray) {
 // Desafio 5
 function footballPoints(wins, ties) {
   // seu código aqui
-  let result = (wins * 3) + ties;
+  let result = wins * 3 + ties;
   return result;
 }
 
@@ -51,11 +51,11 @@ function bighestNumber(numbers) {
   let maior;
 
   for (let index = 0; index < numbers.length; index += 1) {
-    (numbers[index]);
+    numbers[index];
     if (index === 0) {
       maior = numbers[index];
     } else if (numbers[index] > maior) {
-      maior = numbers[index]
+      maior = numbers[index];
     }
   }
   return maior;
@@ -90,15 +90,15 @@ function fizzBuzz(array) {
 
   for (let index = 0; index < array.length; index += 1) {
     if (array[index] % 3 === 0 && array[index] % 5 === 0) {
-      arrayNumbers.push("fizzBuzz");
+      arrayNumbers.push('fizzBuzz');
     } else if (array[index] % 3 === 0) {
-      arrayNumbers.push("fizz");
+      arrayNumbers.push('fizz');
     } else if (array[index] % 5 === 0) {
-      arrayNumbers.push("buzz");
+      arrayNumbers.push('buzz');
     } else {
-      arrayNumbers.push("bug!");
+      arrayNumbers.push('bug!');
     }
-  } 
+  }
   return arrayNumbers;
 }
 
@@ -106,11 +106,11 @@ function fizzBuzz(array) {
 function encode(phraseEncode) {
   // seu código aqui
   const characters = {
-    'a': '1',
-    'e': '2',
-    'i': '3',
-    'o': '4',
-    'u': '5',
+    a: '1',
+    e: '2',
+    i: '3',
+    o: '4',
+    u: '5',
   };
   let newPhrase = '';
 
@@ -121,19 +121,19 @@ function encode(phraseEncode) {
       newPhrase += characters[letter];
     } else {
       newPhrase += letter;
-    } 
+    }
   }
   return newPhrase;
-};
+}
 
 function decode(phraseEncode) {
   // seu código aqui
   const characters = {
-    '1': 'a',
-    '2': 'e',
-    '3': 'i',
-    '4': 'o',
-    '5': 'u',
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
   };
   let newPhrase = '';
 
@@ -144,23 +144,23 @@ function decode(phraseEncode) {
       newPhrase += characters[letter];
     } else {
       newPhrase += letter;
-    } 
+    }
   }
   return newPhrase;
 }
 
 // Desafio 10
-function techList(tech,name) {
+function techList(tech, name) {
   // seu código aqui
   let technologiesNames = [];
 
   if (tech.length === 0) {
-    return "Vazio!";
+    return 'Vazio!';
   }
-  tech = tech.sort()
+  tech = tech.sort();
 
   for (let i = 0; i < tech.length; i += 1) {
-    let techName = {tech: tech[i], name: name};
+    let techName = { tech: tech[i], name: name };
     technologiesNames.push(techName);
   }
   return technologiesNames;
