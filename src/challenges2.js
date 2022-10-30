@@ -1,34 +1,34 @@
 // Desafio 11
-function generatePhoneNumber(numberPS) {
+function generatePhoneNumber(numbPS) {
   // seu código aqui
-  let numberPhoneStyle = `(${numberPS[0]}${numberPS[1]}) ${numberPS[2]}${numberPS[3]}${numberPS[4]}${numberPS[5]}${numberPS[6]}-${numberPS[7]}${numberPS[8]}${numberPS[9]}${numberPS[10]}`;
+  let phoneStyle = `(${numbPS[0]}${numbPS[1]}) ${numbPS[2]}${numbPS[3]}${numbPS[4]}${numbPS[5]}${numbPS[6]}-${numbPS[7]}${numbPS[8]}${numbPS[9]}${numbPS[10]}`;
 
-  if (numberPS.length !== 11) {
+  if (numbPS.length !== 11) {
     return 'Array com tamanho incorreto.';
-    } else if (numberPS.length < 11 || numberPS.length > 11) {
+  } else if (numbPS.length < 11 || numbPS.length > 11) {
     return 'Array com tamanho incorreto.';
-    }
+  }
 
-    for (let i = 0; i < numberPS.length; i += 1) {
-      let numberSize = numberPS[i];
+  for (let i = 0; i < numbPS.length; i += 1) {
+    let sizeNum = numbPS[i];
 
-      if (numberSize < 0 || numberSize > 9 || repeatNumber(numberPS)) {
-        return 'não é possível gerar um número de telefone com esses valores';
-      }
+  if (sizeNum < 0 || sizeNum > 9 || repNum(numbPS)) {
+    return 'não é possível gerar um número de telefone com esses valores';
     }
-    return numberPhoneStyle;
+  }
+  return phoneStyle;
 }
 
-function repeatNumber(numberPS) {
-  for (let i1 = 0; i1 < numberPS.length; i1 += 1) {
-    let equalNumber = 0;
+function repNum(numbPS) {
+  for (let i1 = 0; i1 < numbPS.length; i1 += 1) {
+    let equalNum = 0;
 
-    for (let i2 = 0; i2 < numberPS.length; i2 += 1) {
-      if (numberPS[i1] === numberPS[i2]) {
-        equalNumber += 1;
+    for (let i2 = 0; i2 < numbPS.length; i2 += 1) {
+      if (numbPS[i1] === numbPS[i2]) {
+        equalNum += 1;
       }
     }
-    if (equalNumber >= 3) {
+    if (equalNum >= 3) {
       return true;
     }
   }
@@ -36,9 +36,27 @@ function repeatNumber(numberPS) {
 }
 
 // Desafio 12
-function triangleCheck() {
+function triangleCheck(lineA, lineB, lineC) {
   // seu código aqui
+  const checkSides = sideCondition(lineA, lineB, lineC);
+
+  if (checkSides[0] && checkSides[1] && checkSides[2]) {
+    return true;
+  }
+  return false;
 }
+
+// Checar se cumpre condições para cada lado
+function sideCondition(sideA, sideB, sideC) {
+
+  const returnSides = [];
+  // Se cumprir as condições enviar para a array returnSides
+  returnSides.push(sideA < sideB + sideC) && (sideA > Math.abs(sideB - sideC));
+  returnSides.push(sideB < sideA + sideC) && (sideB > Math.abs(sideA - sideC));
+  returnSides.push(sideC < sideA + sideB) && (sideC > Math.abs(sideA - sideB));
+
+  return returnSides;
+};
 
 // Desafio 13
 function hydrate() {
